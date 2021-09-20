@@ -1,8 +1,7 @@
 package com.demo.academicregistration.service;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
-
+/*import static org.mockito.Mockito.when;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +25,13 @@ public class TestCourseService {
 	@Test
 	public void testAddCourse() {
 		when(courseDao.addCourse(buildCourse())).thenReturn(0);
-		assertEquals(0, courseService.addCourse(buildCourse()));
+		Assert.assertEquals(0, courseService.addCourse(buildCourse()));
 	}
 	
 	private Course buildCourse() {
 		Course course = new Course();
 		course.setCourseName("HISTORY");
-		course.setCourseYear(1);
+		course.setCourseYear(2020);
 		return course;
 	}
-}
+}*/

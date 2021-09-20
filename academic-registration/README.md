@@ -4,7 +4,7 @@ This project include everything needed for the academic registration.
 
 ## Getting started
 
-This is a spring boot application, which has hosted in the AWS using the Elastic Bean stalk. 
+This is a spring boot application, which has hosted in the AWS using the Elastic Bean stalk and using RDS mysql database for persistence. 
 
 ## Usage Local
 
@@ -29,17 +29,15 @@ This is a spring boot application, which has hosted in the AWS using the Elastic
         request : {"userId":2,"firstName":"Tim","lastName":"John","role":"STUDENT"}
         response : {httpCode: 200, "User created successfully"}
 
-    Post Method "/registration" with 
+    Post Method "/register" with 
         request : {"userId":1,"courseId":"100"}
         response : {httpCode: 200, "User registration completed successfully"}
 
 ### Future enhancements to this project
 
-1. Add more test cases and coverage for the functionality
-2. Implement the rest of the CRUD features.
-3. Add the concept of a Class for a Professor and Students, so that we have fine grain control on professor-student 
+1. Add more test cases and coverage for the functionality.
+2. Implement Spring security.
+3. Implement the rest of the CRUD features.
+4. Add the concept of a Class for a Professor and Students, so that we have fine grain control on professor-student 
    relationship with a class.  
-4. Implement JVM Level Caching for the Course details while fetching the data using EH Cache to enhance the performance.
-   We could even look at the possibility of a caching mechanism like Redis or Couchbase.
-5. Use AWS API gateway for scalability. We could use monitoring tools like AWS Kinesis and store the data in AWS RDS.
-6. Implement Authentication using API Gateway.
+5. Implement JVM Level Caching for the Course details while fetching the data using EH Cache to enhance the performance.
