@@ -2,41 +2,41 @@ package com.demo.academicregistration.model;
 
 import javax.validation.constraints.NotEmpty;
 
-import org.springframework.stereotype.Component;
-
-@Component
+/**
+ * The course registration model for courses
+ */
 public class Registration {
 
-	private int id;
+	private int regId;
 	
 	@NotEmpty
-	private String userName;
+	private String userId;
 	
 	@NotEmpty
-	private String courseName;
+	private String courseId;
 
-	public int getId() {
-		return id;
+	public int getRegId() {
+		return regId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setRegId(int regId) {
+		this.regId = regId;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
-	public String getCourseName() {
-		return courseName;
+	public String getCourseId() {
+		return courseId;
 	}
 
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
+	public void setCourseId(String courseId) {
+		this.courseId = courseId;
 	}
 
 }

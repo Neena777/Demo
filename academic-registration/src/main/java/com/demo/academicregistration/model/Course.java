@@ -2,12 +2,12 @@ package com.demo.academicregistration.model;
 
 import javax.validation.constraints.NotEmpty;
 
-import org.springframework.stereotype.Component;
-
-@Component
+/**
+ * The course model which houses the course attributes
+ */
 public class Course {
 	
-	private int id;
+	private int courseId;
     
 	@NotEmpty
 	private String courseName;
@@ -15,12 +15,12 @@ public class Course {
 	@NotEmpty
     private int courseYear;
 
-	public int getId() {
-		return id;
+	public int getCourseId() {
+		return courseId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
 	}
 
 	public String getCourseName() {
@@ -38,4 +38,6 @@ public class Course {
 	public void setCourseYear(int courseYear) {
 		this.courseYear = courseYear;
 	}
+
+	
 }

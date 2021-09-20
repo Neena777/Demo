@@ -2,9 +2,6 @@ package com.demo.academicregistration.model;
 
 import javax.validation.constraints.NotEmpty;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class User {
 	
 	private String userId;

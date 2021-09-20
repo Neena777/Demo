@@ -30,8 +30,8 @@ public class RegistrationController {
 	 * @return
 	 */
 	@PostMapping(consumes = { "application/json" })
-	public ResponseEntity register(@RequestBody Registration registration) {
-		logger.info("Inside register method");
+	public ResponseEntity<Object> register(@RequestBody Registration registration) {
+		logger.debug("Inside register method");
 		registrationService.register(registration);
 		return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(Constants.REGISTRATION_COMPLETED);
 	}

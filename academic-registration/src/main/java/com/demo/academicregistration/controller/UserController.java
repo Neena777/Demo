@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.academicregistration.enums.Role;
 import com.demo.academicregistration.model.User;
 import com.demo.academicregistration.service.UserService;
 import com.demo.academicregistration.util.Constants;
@@ -30,8 +31,8 @@ public class UserController {
 	 * @return
 	 */
 	@PostMapping(consumes = {"application/json"})
-    public ResponseEntity addUser(@RequestBody User user) {
-		logger.info("Inside addUser method");
+    public ResponseEntity<Object> addUser(@RequestBody User user) {
+		logger.debug("Inside addUser method");
 		if(validateUser(user)) {
 			userService.addUser(user);
 	        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(Constants.USER_CREATED);
@@ -42,7 +43,7 @@ public class UserController {
 	
 	public boolean validateUser(User user) {
 		boolean isValid = false;
-		if(user.getRole() == Constants.STUDENT || user.getRole() == Constants.PROFESSOR) {
+		if(user.getRole().equalsIgnoreCase(Role.STUDENT.toString()) || user.getRole().equalsIgnoreCase(Role.PROFESSOR.toString())) {
 			isValid = true;
 		}
 		return isValid;
