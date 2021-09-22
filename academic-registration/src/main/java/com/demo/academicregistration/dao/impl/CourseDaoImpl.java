@@ -39,7 +39,7 @@ public class CourseDaoImpl implements CourseDao {
         if (course.getCourseName() == null) {
             course.setCourseName(currentCourse.getCourseName());
         }
-        return jdbcTemplate.update("UPDATE COURSE SET course_name = ?, course_year=? WHERE course_id = ?",
+        return jdbcTemplate.update("UPDATE course SET course_name = ?, course_year=? WHERE course_id = ?",
                 new Object[] {course.getCourseName(), course.getCourseYear(), course.getCourseId()});
     }
 }
